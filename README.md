@@ -19,3 +19,8 @@ PaLM's primary target audience is physicians, with a focus on providing a user-f
 [Response 1](./User%20research/interview1.md)
 
 # Design Principles
+
+# File structure
+
+-   `.\palm`: react App
+-   
