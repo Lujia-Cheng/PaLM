@@ -111,6 +111,7 @@ function App() {
           <Container sx={styles.panel}>
             <Paper style={styles.leftPanel}>
               <Container>
+                Age
                 <Slider
                   label="Age"
                   aria-label="Always visible"

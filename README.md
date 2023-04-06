@@ -1,6 +1,8 @@
 # Summary
 
-PaLM (Patient Like Me) is a web-based platform designed to help physicians search for similar patient cases based on user input. By comparing cases, physicians can gain insights into the efficacy of treatments and medications, ultimately improving patient outcomes. This report outlines the project's objectives, scope, user research, design principles, user interface design, limitations, and future work.
+> This file focus only on the design aspect. For technical details, see [dev notes](./DevNotes/README.md)
+
+PaLM (Patient Like Me) is a web-based platform designed to provide physicians summary of similar cases. By comparing cases, physicians can gain insights into the efficacy of treatments and medications, ultimately improving patient outcomes. This file outlines the project's scope, summarizes user research, and explains design decisions.
 
 # Introduction
 
@@ -20,7 +22,4 @@ PaLM's primary target audience is physicians, with a focus on providing a user-f
 
 # Design Principles
 
-# File structure
 
--   `.\palm`: react App
--   
