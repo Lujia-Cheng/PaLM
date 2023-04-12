@@ -1,8 +1,8 @@
 # Summary
 
-> This file focus only on the design aspect. For technical details, see [dev notes](./DevNotes/README.md)
+> This page focus on the design aspect. For technical details, see [dev notes](./DevNotes/README.md)
 
-PaLM (Patient Like Me) is a web-based platform designed to provide physicians summary of similar cases. By comparing cases, physicians can gain insights into the efficacy of treatments and medications, ultimately improving patient outcomes. This file outlines the project's scope, summarizes user research, and explains design decisions.
+PaLM (Patient Like Mine) is a web-based platform designed to provide physicians summary of similar cases. By comparing cases, physicians can gain insights into the efficacy of treatments and medications, ultimately improving patient outcomes. This file outlines the project's scope, summarizes user research, and explains design decisions.
 
 # Introduction
 

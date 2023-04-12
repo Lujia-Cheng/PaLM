@@ -1,6 +1,6 @@
 # File structure
 
-- `.\frontend`: react App
+- `.\frontend`: reactJS
 - `.\backend`: TBD
 
 # How to download this repo
