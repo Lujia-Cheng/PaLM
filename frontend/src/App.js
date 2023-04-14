@@ -22,7 +22,7 @@ const SearchPage = () => {
   const [gender, setGender] = useState("");
   const [ethnicity, setEthnicity] = useState("");
   const [medicalConditions, setMedicalConditions] = useState([""]);
-  const [rows, setRows] = useState([{ treatmentType: "", treatmentName: "" }]);
+  const [rows, setRows] = useState([{ interventionType: "", interventionName: "" }]);
   const minAgeDiff = 10;
 
   const handleAgeChange = (event, newValue, activeThumb) => {
@@ -74,7 +74,7 @@ const SearchPage = () => {
   };
 
   const handleAddRow = () => {
-    setRows([...rows, { treatmentType: "", treatmentName: "" }]);
+    setRows([...rows, { interventionType: "", interventionName: "" }]);
   };
 
   const handleDeleteRow = (index) => {
@@ -88,13 +88,13 @@ const SearchPage = () => {
     setGender("");
     setEthnicity("");
     setMedicalConditions([""]);
-    setRows([{ treatmentType: "", treatmentName: "" }]);
+    setRows([{ interventionType: "", interventionName: "" }]);
   };
 
   const handleSearch = async () => {
     const searchCriteria = { age, gender, ethnicity, medicalConditions };
     localStorage.setItem("searchCriteria", JSON.stringify(searchCriteria));
-    localStorage.setItem("proposedTreatment", JSON.stringify(rows));
+    localStorage.setItem("proposedIntervention", JSON.stringify(rows));
     window.location.assign("/summary");
   };
 
@@ -195,18 +195,18 @@ const SearchPage = () => {
               </Box>
             </Box>
             <Box p={3} flexGrow={1}>
-              <Typography variant="h6">Compare Proposed Treatments</Typography>
+              <Typography variant="h6">Compare Proposed Interventions</Typography>
               {rows.map((row, index) => (
                 <Box key={index} display="flex" alignItems="center" my={2}>
                   <Box mr={1}>
-                    <Typography>Treatment {index + 1}:</Typography>
+                    <Typography>Intervention {index + 1}:</Typography>
                   </Box>
                   <Box mr={2} flexGrow={1}>
                     <FormControl fullWidth>
                       <InputLabel>type</InputLabel>
                       <Select
-                        name="treatmentType"
-                        value={row.treatmentType}
+                        name="interventionType"
+                        value={row.interventionType}
                         onChange={(event) => handleRowChange(event, index)}
                       >
                         <MenuItem value="Medication">Medication</MenuItem>
@@ -217,9 +217,9 @@ const SearchPage = () => {
                   <Box mr={2} flexGrow={2}>
                     <TextField
                       fullWidth
-                      name="treatmentName"
+                      name="interventionName"
                       label="name"
-                      value={row.treatmentName}
+                      value={row.interventionName}
                       onChange={(event) => handleRowChange(event, index)}
                     />
                   </Box>

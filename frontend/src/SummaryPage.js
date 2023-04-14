@@ -21,9 +21,9 @@ const SummaryPage = () => {
     medicalConditions: [],
   });
 
-  const [proposedTreatment, setProposedTreatment] = useState([]);
-  const [treatmentType, setTreatmentType] = useState("");
-  const [treatmentName, setTreatmentName] = useState("");
+  const [proposedIntervention, setProposedIntervention] = useState([]);
+  const [interventionType, setInterventionType] = useState("");
+  const [interventionName, setInterventionName] = useState("");
   const [filteredResults, setFilteredResults] = useState([]);
 
   useEffect(() => {
@@ -32,22 +32,22 @@ const SummaryPage = () => {
     if (criteria) {
       setSearchCriteria(JSON.parse(criteria));
     }
-    const treatment = localStorage.getItem("proposedTreatment");
-    if (treatment) {
-      setProposedTreatment(JSON.parse(treatment));
+    const intervention = localStorage.getItem("proposedIntervention");
+    if (intervention) {
+      setProposedIntervention(JSON.parse(intervention));
     }
   }, []);
 
   // useEffect(() => {
-  //   // Filter results based on treatmentType and treatmentName
+  //   // Filter results based on interventionType and interventionName
   //   const results = searchCriteria.conditions.filter((condition) => {
   //     return (
-  //       condition.treatmentType === treatmentType &&
-  //       condition.treatmentName === treatmentName
+  //       condition.interventionType === interventionType &&
+  //       condition.interventionName === interventionName
   //     );
   //   });
   //   setFilteredResults(results);
-  // }, [searchCriteria, treatmentType, treatmentName]);
+  // }, [searchCriteria, interventionType, interventionName]);
 
   return (
     <Box py={4}>
@@ -83,26 +83,25 @@ const SummaryPage = () => {
             <Box mx={10} my={5} display="flex" alignItems="center">
               <Box mr={2} flexGrow={2}>
                 <Typography>
-                  Pre-conditions: {searchCriteria.medicalConditions || "None"}
+                  Pre-conditions: {searchCriteria.medicalConditions.join(", ") || "None"}
                 </Typography>
               </Box>
             </Box>
           </Box>{" "}
         </Paper>
 
-        {proposedTreatment.map((element, index) => (
+        {proposedIntervention.map((element, index) => (
           <Box my={10}>
-            {" "}
             <Paper key={index} padding={5}>
               <Box padding={5}>
                 <Typography>
-                  Treatment {index + 1}: {element.treatmentName}
+                  Intervention {index + 1}: {element.interventionName}
                 </Typography>
                 <Box my={5}>
                   TODO: ajax connect to database, fetch, and filter the result
                 </Box>
               </Box>
-            </Paper>{" "}
+            </Paper>
           </Box>
         ))}
 
