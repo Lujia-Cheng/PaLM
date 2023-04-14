@@ -9,8 +9,8 @@
 
 > Prerequisites:
 >
-> - `git` (or equivalent like Github Desktop, VS Code github extension, etc.) and basic knowledge of `git`
-> - `npm` (which is shipped within [Node.js](https://nodejs.org))
+> - `git` (or equivalent like Github Desktop, VS Code github extension, etc. and some basic knowledge)
+> - `npm` (package management program, provided by [Node.js](https://nodejs.org))
 
 1. Find a place that you want to put this repo in. Either create a new folder or where you commonly store projects.
 
@@ -30,7 +30,7 @@
 
 1. Make sure we're in the `./frontend` folder by checking the terminal. It should have something like `...\(your_folder_name)\PaLM\frontend>`. If not, refer to step 3 above.
 
-2. Simply start the app. [Official guide](./frontend/README.md).
+2. Simply start the app below. Or do some extra reading from React's [guide](./frontend/README.md).
 
    `npm start`
 
@@ -46,6 +46,6 @@ TBD
 
 ## Misc
 
-synonym handling like common abbr. aidign physician searching
+synonym handling like common abbr. aiding physician searching
 
 # Additional feature
