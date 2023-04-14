@@ -1,0 +1,23 @@
+db.createCollection("patients")
+
+for (var i = 0; i < 100; i++) {
+  var age = Math.floor(Math.random() * 85) + 10;
+  var gender = (Math.random() < 0.5) ? 'Male' : 'Female';
+  var ethnicity = ['Other', 'African American', 'Hispanic', 'Caucasian'][Math.floor(Math.random() * 4)];
+  var test_taken = ['Computed Tomography scan', 'Magnetic Resonance Imaging', 'Electrocardiogram', 'Urinalysis'][Math.floor(Math.random() * 4)];
+  var medical_condition = ['Diabetes', 'Hypertension', 'Asthma', 'Hyperlipidemia'][Math.floor(Math.random() * 4)];
+  var treatment = ['Medication A', 'Medication B', 'Surgery', 'Other'][Math.floor(Math.random() * 3)];
+  var diagnosis = ['Positive', 'Negative', 'Inconclusive', 'Unknown'][Math.floor(Math.random() * 4)];
+  var outcome = ['Recovered', 'Improved', 'Worsen', 'No change'][Math.floor(Math.random() * 4)];
+  
+  db.patients.insertOne({
+    age: age,
+    gender: gender,
+    ethnicity: ethnicity,
+    test_taken: test_taken,
+    medical_condition: medical_condition,
+    treatment: treatment,
+    diagnosis: diagnosis,
+    outcome: outcome
+  });
+}

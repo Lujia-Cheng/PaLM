@@ -20,7 +20,7 @@ const SummaryPage = () => {
     ethnicity: "",
     medicalConditions: [],
   });
-  
+
   const [proposedTreatment, setProposedTreatment] = useState([]);
   const [treatmentType, setTreatmentType] = useState("");
   const [treatmentName, setTreatmentName] = useState("");
@@ -58,47 +58,59 @@ const SummaryPage = () => {
           </Typography>
         </AppBar>
       </header>
-      <Box mx="auto">
-        <Box mx ={5}my ={5}>Summary</Box>
-        <Box mx={5} sx={{ p: 2, border: "1px dashed black" }}>
-          <Box mx={10} my={5} display="flex" alignItems="center">
-            <Box mr={2} flexGrow={2}>
-              <Typography>
-                Age: {searchCriteria.age[0] + " ~ " + searchCriteria.age[1]}
-              </Typography>
+      <Box mx="auto" padding={5}>
+        <Paper>
+          {" "}
+          <Box padding={5}>
+            <Typography>Summary</Typography>
+            <Box mx={10} my={5} display="flex" alignItems="center">
+              <Box mr={2} flexGrow={2}>
+                <Typography>
+                  Age: {searchCriteria.age[0] + " ~ " + searchCriteria.age[1]}
+                </Typography>
+              </Box>
+              <Box mr={2} flexGrow={2}>
+                <Typography>
+                  Gender: {searchCriteria.gender || "Any"}
+                </Typography>
+              </Box>
+              <Box mr={2} flexGrow={2}>
+                <Typography>
+                  Ethnicity: {searchCriteria.ethnicity || "Any"}
+                </Typography>
+              </Box>
             </Box>
-            <Box mr={2} flexGrow={2}>
-              <Typography>Gender: {searchCriteria.gender || "Any"}</Typography>
+            <Box mx={10} my={5} display="flex" alignItems="center">
+              <Box mr={2} flexGrow={2}>
+                <Typography>
+                  Pre-conditions: {searchCriteria.medicalConditions || "None"}
+                </Typography>
+              </Box>
             </Box>
-            <Box mr={2} flexGrow={2}>
-              <Typography>
-                Ethnicity: {searchCriteria.ethnicity || "Any"}
-              </Typography>
-            </Box>
+          </Box>{" "}
+        </Paper>
+
+        {proposedTreatment.map((element, index) => (
+          <Box my={10}>
+            {" "}
+            <Paper key={index} padding={5}>
+              <Box padding={5}>
+                <Typography>
+                  Treatment {index + 1}: {element.treatmentName}
+                </Typography>
+                <Box my={5}>
+                  TODO: ajax connect to database, fetch, and filter the result
+                </Box>
+              </Box>
+            </Paper>{" "}
           </Box>
-          <Box mx={10} my={5} display="flex" alignItems="center">
-            <Box mr={2} flexGrow={2}>
-              <Typography>
-                Pre-conditions: {searchCriteria.medicalConditions || "None"}
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
-        <Box mx={5} my={2} sx={{ p: 2, border: "1px solid black" }}>
-          {proposedTreatment.map((element, index) => (
-            <Box key={index} my={2} >
-              <Typography>
-                Treatment {index + 1}: {element.treatmentName}
-              </Typography>
-              <Box>TODO: ajax connect to database, fetch, and filter the result</Box>
-            </Box>
-          ))}
-        </Box>
+        ))}
+
         <Box display="flex" alignItems="center" justifyContent="center" my={2}>
           <Box p={2}>
             <Button
               variant="contained"
-              color="primary"
+              color="secondary"
               onClick={() => window.location.assign("/")}
             >
               Back
