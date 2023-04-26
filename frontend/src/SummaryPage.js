@@ -90,20 +90,56 @@ const SummaryPage = () => {
           </Box>{" "}
         </Paper>
 
-        {proposedIntervention.map((element, index) => (
-          <Box my={10}>
-            <Paper key={index} padding={5}>
-              <Box padding={5}>
-                <Typography>
-                  Intervention {index + 1}: {element.interventionName}
-                </Typography>
-                <Box my={5}>
-                  TODO: ajax connect to database, fetch, and filter the result
-                </Box>
-              </Box>
-            </Paper>
-          </Box>
-        ))}
+        {proposedIntervention.map((element, index) => {
+  const summaries = [
+    {
+      intervention: "Prednisone",
+      cases: 15,
+      otherInfo:
+        "Average disease duration of 1.5 years; complete remission in 10 patients.",
+    },
+    {
+      intervention: "Ventolin",
+      cases: 12,
+      otherInfo:
+        "9 out of 12 patients have positive antinuclear antibody (ANA) test; 6 patients with joint pain.",
+    },
+    {
+      intervention: "Amoxil",
+      cases: 8,
+      otherInfo:
+        "3 out of 8 patients reported photosensitivity; 2 patients developed mild rash.",
+    },
+    {
+      intervention: "Zithromax",
+      cases: 7,
+      otherInfo:
+        "4 out of 7 patients experienced a reduction in disease activity; no significant side effects reported.",
+    },
+    {
+      intervention: "Synthroid",
+      cases: 4,
+      otherInfo:
+        "All patients showed improvement in fatigue and reduced inflammation markers.",
+    },
+  ];
+  const summary = summaries[index];
+  return (
+    <Box my={10} key={index}>
+      <Paper padding={5}>
+        <Box padding={5}>
+          <Typography>
+            Intervention {index + 1}: {element.interventionName}
+          </Typography>
+          <Typography>Cases: {summary.cases}</Typography>
+          <Typography>
+            Other Relevant Information: {summary.otherInfo}
+          </Typography>
+        </Box>
+      </Paper>
+    </Box>
+  );
+})}
 
         <Box display="flex" alignItems="center" justifyContent="center" my={2}>
           <Box p={2}>
