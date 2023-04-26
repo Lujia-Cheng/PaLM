@@ -16,13 +16,14 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
 
-
 const SearchPage = () => {
   const [age, setAge] = useState([18, 65]);
   const [gender, setGender] = useState("");
   const [ethnicity, setEthnicity] = useState("");
   const [medicalConditions, setMedicalConditions] = useState([""]);
-  const [rows, setRows] = useState([{ interventionType: "", interventionName: "" }]);
+  const [rows, setRows] = useState([
+    { interventionType: "", interventionName: "" },
+  ]);
   const minAgeDiff = 10;
 
   const handleAgeChange = (event, newValue, activeThumb) => {
@@ -44,7 +45,7 @@ const SearchPage = () => {
   };
 
   const handleGenderChange = (event) => {
-    setGender(event.target.value); 
+    setGender(event.target.value);
   };
 
   const handleEthnicityChange = (event) => {
@@ -108,9 +109,9 @@ const SearchPage = () => {
         </AppBar>
       </header>
       <Box mx="auto">
-        <Paper>
-          <Box display="flex">
-            <Box p={3} flexGrow={1}>
+        <Box p={3}>
+          <Paper>
+            <Box p={3}>
               <Typography variant="h5" gutterBottom>
                 Search Page
               </Typography>
@@ -121,7 +122,8 @@ const SearchPage = () => {
               </Box>
               <Box mb={2}>
                 <Typography variant="h6">Demographics</Typography>
-                <Box my={2}>
+
+                <Box mb={2}>
                   <Typography id="age-slider" gutterBottom>
                     Age
                   </Typography>
@@ -134,7 +136,7 @@ const SearchPage = () => {
                     max={100}
                   />
                 </Box>
-                <Box my={2}>
+                <Box mb={2}>
                   <FormControl fullWidth>
                     <InputLabel>Gender</InputLabel>
                     <Select value={gender} onChange={handleGenderChange}>
@@ -144,7 +146,7 @@ const SearchPage = () => {
                     </Select>
                   </FormControl>
                 </Box>
-                <Box my={2}>
+                <Box>
                   <FormControl fullWidth>
                     <InputLabel>Ethnicity</InputLabel>
                     <Select value={ethnicity} onChange={handleEthnicityChange}>
@@ -194,8 +196,12 @@ const SearchPage = () => {
                 </Box>
               </Box>
             </Box>
-            <Box p={3} flexGrow={1}>
-              <Typography variant="h6">Compare Proposed Interventions</Typography>
+          </Paper>
+          <Paper>
+            <Box p={3}>
+              <Typography variant="h6">
+                Compare Proposed Interventions
+              </Typography>
               {rows.map((row, index) => (
                 <Box key={index} display="flex" alignItems="center" my={2}>
                   <Box mr={1}>
@@ -242,33 +248,20 @@ const SearchPage = () => {
                 </Button>
               </Box>
             </Box>
+          </Paper>
+        </Box>
+        <Box display="flex" alignItems="center" justifyContent="center" my={2}>
+          <Box my={2}>
+            <Button variant="contained" color="secondary" onClick={handleReset}>
+              Reset All
+            </Button>
           </Box>
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            my={2}
-          >
-            <Box my={2}>
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={handleReset}
-              >
-                Reset All
-              </Button>
-            </Box>
-            <Box p={2}>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleSearch}
-              >
-                Search
-              </Button>
-            </Box>
+          <Box p={2}>
+            <Button variant="contained" color="primary" onClick={handleSearch}>
+              Search
+            </Button>
           </Box>
-        </Paper>
+        </Box>
       </Box>
     </Box>
   );
