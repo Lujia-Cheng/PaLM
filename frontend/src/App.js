@@ -110,7 +110,7 @@ const SearchPage = () => {
       </header>
       <Box mx="auto">
         <Box p={3}>
-          <Paper>
+          <Paper p={3}>
             <Box p={3}>
               <Typography variant="h5" gutterBottom>
                 Search Page
@@ -197,7 +197,7 @@ const SearchPage = () => {
               </Box>
             </Box>
           </Paper>
-          <Paper>
+          <Paper my={5}>
             <Box p={3}>
               <Typography variant="h6">
                 Compare Proposed Interventions
