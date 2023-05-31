@@ -16,13 +16,14 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
 
-
 const SearchPage = () => {
   const [age, setAge] = useState([18, 65]);
   const [gender, setGender] = useState("");
   const [ethnicity, setEthnicity] = useState("");
   const [medicalConditions, setMedicalConditions] = useState([""]);
-  const [rows, setRows] = useState([{ interventionType: "", interventionName: "" }]);
+  const [rows, setRows] = useState([
+    { interventionType: "", interventionName: "" },
+  ]);
   const minAgeDiff = 10;
 
   const handleAgeChange = (event, newValue, activeThumb) => {
@@ -44,7 +45,7 @@ const SearchPage = () => {
   };
 
   const handleGenderChange = (event) => {
-    setGender(event.target.value); 
+    setGender(event.target.value);
   };
 
   const handleEthnicityChange = (event) => {
@@ -131,7 +132,7 @@ const SearchPage = () => {
                     valueLabelDisplay="on"
                     aria-labelledby="age-slider"
                     min={0}
-                    max={100}
+                    max={99}
                   />
                 </Box>
                 <Box my={2}>
@@ -195,7 +196,9 @@ const SearchPage = () => {
               </Box>
             </Box>
             <Box p={3} flexGrow={1}>
-              <Typography variant="h6">Compare Proposed Interventions</Typography>
+              <Typography variant="h6">
+                Compare Proposed Interventions
+              </Typography>
               {rows.map((row, index) => (
                 <Box key={index} display="flex" alignItems="center" my={2}>
                   <Box mr={1}>

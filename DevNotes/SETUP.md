@@ -1,15 +1,4 @@
-# File structure
-
-## Framework & languages
-
-- `.\frontend`: reactJS
-- `.\backend`: TBD
-
-## Filename convention
-
-Due to the natural of our user as medical profesisonals. Our program will be structed according PICO process (Patient, Intervention, Comparison, Outcome)
-
-# How to download this repo
+# Guide to download this repo & aid development
 
 ## Download
 
@@ -32,7 +21,7 @@ Due to the natural of our user as medical profesisonals. Our program will be str
 
    `npm install`
 
-## Run this project
+## Run project 
 
 1. Make sure we're in the `./frontend` folder by checking the terminal. It should have something like `...\(your_folder_name)\PaLM\frontend>`. If not, refer to step 3 above.
 
@@ -53,11 +42,3 @@ TBD
 ## Misc
 
 synonym handling like common abbr. aiding physician searching
-
-# Some useful resource
-
-[Medical publication search based on PICO provided by NIH](https://pubmedhh.nlm.nih.gov/pico/index.php)
-
-[FHIR: standardized health record format](https://www.hl7.org/fhir/summary.html)
-
-[UPMC FHIR (ver. 4) API](https://www.upmchealthplan.com/interop/)
