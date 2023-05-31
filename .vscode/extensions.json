@@ -1,7 +1,6 @@
 {
   "recommendations": [
     "vscodeshift.material-ui-snippets",
-    "ms-vsliveshare.vsliveshare-pack",
     "jawandarajbir.react-vscode-extension-pack",
     "eamodio.gitlens"
   ]
