@@ -1,14 +1,23 @@
 version: "3.4"
 
 services:
+  fhir-server:
+    image: ./fhir-server
+    build:
+      context: fhir-server
+      dockerfile: .devcontainer/Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      - mongodb
   frontend:
-    image: frontend
+    image: ./frontend
     build:
       context: frontend
       dockerfile: ./Dockerfile
     ports:
       - 3000:3000
-  db:
-    image: 
-    environment:
-      - name=value
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
